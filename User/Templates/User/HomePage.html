@@ -1,0 +1,330 @@
+{% extends 'User/Head.html'%}
+{%load static%}
+{%block content%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="single_slider slider_bg_1 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-md-6">
+                        <div class="slider_text">
+                            <h3> <br> <span>Show your Dogs Talent Here</span></h3>
+                            <!-- <p>Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit, sed do eiusmod.</p> -->
+                            <!-- <a href="contact.html" class="boxed-btn4">Contact Us</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dog_thumb d-none d-lg-block">
+                <img src="{% static 'Main/img/banner/dog3.jpg' %}" width="800" height="600" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+
+    <!-- service_area_start  -->
+    <div class="service_area">
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-lg-7 col-md-10">
+                    <div class="section_title text-center mb-95">
+                        <h3>Services for every dog</h3>
+                        <!-- <p>Best is here...</p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service">
+                         <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
+                             <div class="service_icon">
+                                 <img src="{% static 'Main/img/banner/new1.jpg' %}" width="200" height="200" alt="">
+                             </div>
+                         </div>
+                         <div class="service_content text-center">
+                            <h3>Dog Shows</h3>
+                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p> -->
+                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service active">
+                         <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
+                             <div class="service_icon">
+                                 <img src="{% static 'Main/img/banner/bg15.jpg' %}" width="200" height="200" alt="">
+                             </div>
+                         </div>
+                         <div class="service_content text-center">
+                            <h3>Healthy Meals</h3>
+                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p> -->
+                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service">
+                         <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
+                             <div class="service_icon">
+                                 <img src="{% static 'Main/img/banner/new3.jpg' %}" width="300" height="200" alt="">
+                             </div>
+                         </div>
+                         <div class="service_content text-center">
+                            <h3>Pet Care-Products</h3>
+                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p> -->
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- service_area_end -->
+
+    <!-- pet_care_area_start  -->
+    <div class="pet_care_area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-md-6">
+                    <div class="pet_thumb">
+                        <img src={% static 'Main/img/banner/new20.jpg' %} width="400" height="600" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 offset-lg-1 col-md-6">
+                    <div class="pet_info">
+                        <div class="section_title">
+                            <h3>We care your pet<br>
+                                As you care</h3>
+                                <img src="{% static 'Main/img/banner/new22.jpg' %}" width="600" height=470" alt="">
+                            <!-- <p>Lorem ipsum dolor sit , consectetur adipiscing elit, sed do <br> iusmod tempor incididunt ut labore et dolore magna aliqua. <br> Quis ipsum suspendisse ultrices gravida. Risus commodo <br>
+                                viverra maecenas accumsan.</p> -->
+                            <!-- <a href="about.html" class="boxed-btn3">About Us</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- pet_care_area_end  -->
+
+    <!-- adapt_area_start  -->
+    <div class="adapt_area">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-5">
+                    <div class="adapt_help">
+                        <div class="pet_thumb">
+                            <img src={% static 'Main/img/banner/new2.jpg' %} width="450" height="600" alt="">
+                        </div>
+                        <!-- <div class="section_title">
+                            <h3><span>Unleash The Beast</span>
+                               </h3>
+                            <p>Lorem ipsum dolor sit , consectetur adipiscing elit, sed do iusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices.</p>
+                            <a href="contact.html" class="boxed-btn3">Contact Us</a>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="adapt_about">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="single_adapt text-center">
+                                    <img src="{% static 'Main/img/adapt_icon/1.png' %}" alt="">
+                                    <div class="adapt_content">
+                                        <h3 class="counter">200+</h3>
+                                        <p>Products For Pets</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="single_adapt text-center">
+                                    <img src="{% static 'Main/img/adapt_icon/3.png' %}" alt="">
+                                    <div class="adapt_content">
+                                        <h3><span class="counter">100</span>+</h3>
+                                        <p>Shows All Over The States</p>
+                                    </div>
+                                </div>
+                            
+                                <!-- <div class="single_adapt text-center">
+                                    <img src="{% static 'Main/img/adapt_icon/2.png' %}" alt="">
+                                    <div class="adapt_content">
+                                        <h3><span class="counter">52</span>+</h3>
+                                        <p>Pets Available</p>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- adapt_area_end  -->
+
+    <!-- testmonial_area_start  -->
+    <!-- <div class="testmonial_area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="textmonial_active owl-carousel">
+                        <div class="testmonial_wrap">
+                            <div class="single_testmonial d-flex align-items-center">
+                                <div class="test_thumb">
+                                    <img src="{% static 'Main/img/testmonial/1.png' %}" alt="">
+                                </div>
+                                <div class="test_content">
+                                    <h4>Jhon Walker</h4>
+                                    <span>Head of web design</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testmonial_wrap">
+                            <div class="single_testmonial d-flex align-items-center">
+                                <div class="test_thumb">
+                                    <img src="{% static 'Main/img/testmonial/1.png' %}" alt="">
+                                </div>
+                                <div class="test_content">
+                                    <h4>Jhon Walker</h4>
+                                    <span>Head of web design</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testmonial_wrap">
+                            <div class="single_testmonial d-flex align-items-center">
+                                <div class="test_thumb">
+                                    <img src="{% static 'Main/img/testmonial/1.png' %}" alt="">
+                                </div>
+                                <div class="test_content">
+                                    <h4>Jhon Walker</h4>
+                                    <span>Head of web design</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div> -->
+    <!-- testmonial_area_end  -->
+
+    <!-- team_area_start  -->
+    <div class="team_area">
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-lg-6 col-md-10">
+                    <div class="section_title text-center mb-95">
+                        <h3>Our Judges</h3>
+                        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_team">
+                        <div class="thumb">
+                            <img src="{% static 'Main/img/banner/new24.jpg' %}" width="300" height="300" alt="">
+                        </div>
+                        <div class="member_name text-center">
+                            <div class="mamber_inner">
+                                <h4>Rala Emaia</h4>
+                                <p>Senior Judge</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_team">
+                        <div class="thumb">
+                            <img src="{% static 'Main/img/banner/new23.jpg' %}" width="300" height="300" alt="">
+                        </div>
+                        <div class="member_name text-center">
+                            <div class="mamber_inner">
+                                <h4>jhon Smith</h4>
+                                <p>Support</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_team">
+                        <div class="thumb">
+                            <img src="{% static 'Main/img/banner/new25.jpg' %}" width="300" height="300" alt="">
+                        </div>
+                        <div class="member_name text-center">
+                            <div class="mamber_inner">
+                                <h4>Rala Emaia</h4>
+                                <p>Support</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- team_area_start  -->
+
+    <div class="contact_anipat anipat_bg_1">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact_text text-center">
+                        <div class="section_title text-center">
+                            <h3>Why go with Talent Dogs?</h3>
+                            <p>Because we know that we are the best.</p>
+                        </div>
+                        <div class="contact_btn d-flex align-items-center justify-content-center">
+                            <a href="" class="boxed-btn4">Contact Us</a>
+                            <p>  <a href="#"> 7559012043</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>
+{%endblock content%}
+
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+    <h3>Hello {{data.user_name}}</h3>
+    <a href="{% url 'webuser:uprofile' %}">MY Profile</a><br>
+    <a href="{% url 'webuser:edtpro' %}">Edit Profile</a><br>
+    <a href="{% url 'webuser:changepass' %}">Change Password</a><br>
+    <a href="{% url 'webuser:searchproduct' %}">Searchproduct</a><br>
+    <a href="{% url 'webuser:complaint' %}">Complaint</a><br>
+    <a href="{% url 'webuser:reply' %}">ComplaintList</a><br>
+    <a href="{% url 'webuser:show' %}">ShowList</a><br>
+   
+    <a href="{% url 'webuser:paid_show' %}">Booked List Of Shows</a>
+</body>
+</html> -->

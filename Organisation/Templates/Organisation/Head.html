@@ -1,0 +1,234 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Animal</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'Organization/img/favicon.png' %}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'Organization/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Organization/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Organization/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'Organization/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Organization/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'Organization/css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'Organization/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'Organization/css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static 'Organization/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'Organization/css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'Organization/css/style.css' %}">
+    <link href="{% static 'Organization/form.css' %}" rel="stylesheet" id="tab">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <header>
+        <div class="header-area ">
+            <div class="header-top_area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-8">
+                            <div class="short_contact_list">
+                                <ul>
+                                    <li><a href="contact">7559012043</a></li>
+                                    <li><a href="email">talentdogs208@gmail.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-4 ">
+                            <div class="social_media_links">
+                                <a href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-pinterest-p"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo">
+                                <a href="{% static 'Organization/index.html' %}">
+                                    <!-- <img src="{% static 'Main/img/logo.png' %}" alt=""> -->
+                                    <h1>Talent Dogs</h1>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a  href="{% url 'weborganisation:Home' %}">Home</a></li>
+                                        <li><a href="{% url 'weborganisation:logout' %}">Logout     </a></li>
+                                        <li><a href="#">Personal Details<i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="{% url 'weborganisation:uprofile' %}">MY Profile</a></li>
+                                                <li><a href="{% url 'weborganisation:edtpro' %}">Edit Profile</a></li>
+                                                <li><a href="{% url 'weborganisation:changepass' %}">Change Password</a></li>
+                                               
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Show Details <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="{% url 'weborganisation:shw' %}">Schedule Shows</a></li>
+                                                <li><a href="{% url 'weborganisation:shwlist' %}">Schedule List Of Shows</a></li>
+                                                
+                                         
+                                                
+                                            </ul>
+                                        </li>
+                                        <!-- <li><a href="#">Search Products<i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="{% url 'webuser:searchproduct' %}">Product Gallery</a></li>
+                                                <li><a href="{% url 'webuser:myprod' %}">Booked List Of Product</a></li>
+                                                
+                                                
+                                            </ul>
+                                        </li> -->
+                                        <!-- <li><a href="contact.html">Contact</a></li> -->
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    {% block content %}
+
+
+        {% endblock content %}
+
+
+   <!-- footer_start  -->
+   <footer class="footer">
+    <div class="footer_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-md-6 col-lg-3">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">
+                            Contact Us
+                        </h3>
+                        <ul class="address_line">
+                            <li>7559012043</li>
+                            <li><a href="#">talentdogs208@gmail.Com</a></li>
+                            <!-- <li>Parayamthadathil(H),</li>
+                            <li>Perumbilly P O</li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3  col-md-6 col-lg-3">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">
+                            Our Servces
+                        </h3>
+                        <ul class="links">
+                            <li><a href="#">Conducting PetShows</a></li>
+                            <li><a href="#">Providing Petcare Products </a></li>
+                          
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3  col-md-6 col-lg-3">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">
+                            Quick Link
+                        </h3>
+                        <ul class="links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Login info</a></li>
+                            <li><a href="#">Knowledge Base</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-lg-3 ">
+                    <div class="footer_widget">
+                        <div class="footer_logo">
+                            <a href="#">
+                                <h2>Talent Dogs</h2>
+                                <!-- <img src="{% static 'Main/img/logo.png' %}" alt=""> -->
+                            </a>
+                        </div>
+                        <p class="address_text">Parayamthadathil(H),Perumbilly P O,Mulamthuruthy,682314
+                        </p>
+                        <div class="socail_links">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="ti-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="ti-pinterest"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copy-right_text">
+        <div class="container">
+            <div class="bordered_1px"></div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <p class="copy_right text-center">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer_end  -->
+</body>
+</html>
+

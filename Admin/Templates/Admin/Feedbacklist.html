@@ -1,0 +1,43 @@
+{% extends 'Admin/Head.html'%}
+
+
+{%load static%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head><div id="tab" align="center">
+<body>
+    <form action="" method="post">
+        <table border="1" align="center" cellpadding="10" style="border-collapse:collapse">
+            <tr>
+               <th>SI NO</th>
+               <th>FEEDBACK</th>
+               <th> DATE</th>
+               <th>USER NAME</th>
+               <th>USER EMAIL</th>
+               <th>USER ADDRESS</th>
+               <th>ORGANISATION NAME</th>
+               <td><a href="{% url 'webadmin:delfeed' i.id %}">Delete</a></td>
+            </tr>
+            {% for i in data %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{i.feedback_content}}</td>
+                <td>{{i.feedback_date}}</td>
+                <td>{{i.user_id.user_name}}</td>
+                <td>{{i.user_id.user_email}}</td>
+                <td>{{i.user_id.user_address}}</td>
+                <td>{{i.organisation_name.org_name}}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+</body></div>
+</html>
+{% endblock content %}

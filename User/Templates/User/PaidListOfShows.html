@@ -1,0 +1,51 @@
+{% extends 'User/Head.html'%}
+
+
+{%load static%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head><div id="tab" align="center"><br><br><br><br><br>
+<body>
+<h2><center><b>Paid List Of Shows</center></b></h2>
+
+    <table border="1" align="center" cellpadding="10" style="border-collapse:collapse">
+        <tr>
+           <th>SI NO</th>
+           <th>Event Name</th>
+           <th>Date</th>
+           
+           <th>Event Venue</th>
+           <th>Time</th>
+           <th>Event Details</th>
+           <th>Event Poster</th>
+           <th>Result</th> 
+        
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.schedule.schedule_title}}</td> 
+            <td>{{i.booking_date}}</td> 
+            <td>{{i.schedule.schedule_venue}}</td>
+            <td>{{i.schedule.schedule_time}}</td>
+            <td>{{i.schedule.schedule_details}}</td>
+            
+           <td><img src="{{i.schedule.schedule_poster.url}}" width="150" height="150"></td>
+           <!-- <td><a href="{% url 'webuser:del_pshow' i.id %}">Delete</a> -->
+            <td><a href="{% url 'webuser:sresult' i.id %}">Result</a></td>
+            <!-- <td><a href="{% url 'webuser:Chat-user' i.id %}">ChatNow</a></td> -->
+        </tr>
+        {% endfor %}
+    </table>
+
+
+   
+</body></div><br><br><br>
+</html>
+{% endblock content %}

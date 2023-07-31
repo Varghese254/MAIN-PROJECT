@@ -1,0 +1,74 @@
+{% extends 'Admin/Head.html'%}
+
+
+{%load static%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head><div id="tab" align="center">
+<body>
+    <h1><b><center>Show Booking</center></b></h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table border="1" align="center" cellpadding="10" style="border-collapse: collapse;">
+            <tr>
+                <td>From Date:</td>
+                <td><input type="date" name="frdate"></td>
+            </tr>
+            <tr>
+                <td>To Date:</td>
+                <td><input type="date" name="todate"></td>
+            </tr>
+            <tr>
+                <td align="center" colspan="2"><input type="submit" name="btn" value="Submit">&nbsp&nbsp<input type="reset" value="Cancel"></td>
+            </tr>
+        </table>
+        <br><br>
+        <table border="1" align="center" cellpadding="10" style="border-collapse: collapse;">
+            <tr>
+                <th>SI No</th>
+                <th>Booking Date</th>
+                <th>Name</th>
+                <th>Venue</th>
+                <th>Time</th>
+                <th>Venue</th>
+                <th>Poster</th>
+                <th>User Name</th>
+                <th>Address</th>
+                <th>Licence No:</th>
+                <th>Breed</th>
+                <th>Image</th>
+            </tr>
+                {% for i in data %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+         
+            <td>{{i.booking_date}}</td> 
+          
+            <td>{{i.schedule.schedule_title}}</td>
+            <td>{{i.schedule.schedule_venue}}</td>
+            <td>{{i.schedule.schedule_time}}</td>
+          
+        
+            
+           <td><img src="{{i.schedule.schedule_poster.url}}" width="150" height="150"></td>
+
+       
+           <td>{{i.user.user_name}}</td> 
+           <td>{{i.user.user_address}}</td> 
+           <td>{{i.user.dog_licence}}</td> 
+           <td>{{i.user.dog_name}}</td> 
+           <td>{{i.user.dog_breed}}</td> 
+           <td><img src="{{i.user.dog_photo.url}}" width="150" height="150"></td> 
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+</body></div>
+</html>
+{% endblock content %}

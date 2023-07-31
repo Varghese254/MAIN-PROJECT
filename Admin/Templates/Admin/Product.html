@@ -1,0 +1,117 @@
+{% extends 'Admin/Head.html'%}
+
+
+{%load static%}
+{% block content %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<div id="tab" align="center">
+<body>
+<form action="" id="ProductForm" method="post" data-subcat-url="{% url 'webadmin:Ajax-Sub' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+  <table width="200" border="1" cellspacing="2" cellpadding="2" align="center">
+  
+    <tr><td>Category</td>
+        <td><select name="Category" id="cat">
+            <option value="">--SELECT--</option>
+            {% for i in cat %}
+            <option value="{{i.id}}">{{i}}</option>
+            {% endfor %}
+         
+        </select></td></tr>
+    <tr>
+      <td>SubCategory</td>
+     <td> <select name="subcategory" id="subcat">
+      <option value="">--select--</option>
+     
+      </select></td>
+    </tr>
+    
+
+    <tr>
+    <td width="115">Name</td>
+      <td><input type="text" name="txtname" id="txt_dis"></td>
+    </tr>
+      
+     <tr>
+       <td width="115">Description</td>
+      <td><textarea name="txtad" id="txtad"></textarea> </td>        
+    </tr> 
+   <tr>
+      <td>Photo</td>
+      <td><input type="file" name="photo" id="photo"></td>
+    </tr>
+   
+    <tr>
+    <td width="115">Price</td>
+
+      <td><input type="text" name="price" id="price"></td>
+      </tr> 
+      <tr>
+        <td width="115">Stock</td>
+          <td><input type="text" name="txtstock" id="txts"></td>
+        </tr>
+ 
+      <td colspan="2" align="center"><input type="submit" name="btn_submit" id="btn_submit" value="Submit" />
+      <input type="submit" name="btn_cancel" id="btn_cancel" value="cancel" /></td>
+    </tr>
+  </table>
+  <br>
+  
+</table>
+<br>
+<table border="2">
+    <tr>
+        <th>sl.no</th>
+        <th>ProductName</th>
+        <th>ProductCategory</th>
+        <th>ProductSubcategory</th>
+        <th>ProductPhoto</th>
+        <th>ProductDescription</th>
+        <th>ProductPrice</th>
+        <th>action</th>
+    </tr>
+    {% for i in prod %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.product_name}}</td>
+        <td>{{i.product_category}}</td>
+        <td>{{i.product_subcategory}}</td>
+        <th><img src="{{i.product_photo.url}}" width="150" height="150"></th>
+        <td>{{i.product_des}}</td>
+        <td>{{i.product_price}}</td>
+        <td><a href="{% url 'webadmin:delprod' i.id %}">Delete</a> | <a href="{% url 'webadmin:addstock' i.id %}">Add Stock</a> </td>
+
+    </tr>
+    {% endfor %}
+</table>
+<script>
+  {% if msg %}
+     alert("{{msg}}")
+  {% endif %}
+</script>   
+</form>		
+  
+</body>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $("#cat").change(function () {
+        var did = $(this).val();
+        var ur = $("#ProductForm").attr("data-subcat-url");
+        $.ajax({
+            url: ur,
+            data: { catd: did, },
+            success: function (data) {
+              //alert(data)
+                $("#subcat").html(data);
+            },
+        });
+    });
+    </script>
+</html>
+{% endblock content %}

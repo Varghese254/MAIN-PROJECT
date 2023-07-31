@@ -1,0 +1,62 @@
+{% extends 'Organisation/Head.html'%}
+
+
+{%load static%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head><div id="tab" align="center"><br><br><br><br>
+<body>
+    <h1>Scheduled List Of Shows</h1>
+    <form action="" method="post" id="UserForm" data-place-url="{% url 'webadmin:Ajax-Place' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table border="2">
+            <tr>
+                <th>sl.no</th>
+                <th>EVENT NAME</th>
+                <th>DISTRICT</th>
+                <th>PLACE</th>
+              
+                <th>EVENT DATE</th>
+                <th>EVENT TIME</th>
+                <th>EVENT VENUE</th>
+                <th>EVENT DETAILS</th>
+                <th>EVENT PHOTO</th>
+                <th>Result</th>
+                <th>action</th>
+            </tr>
+            {% for i in data %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{i.schedule_title}}</td> 
+                <td>{{i.place.district}}</td> 
+                <td>{{i.place}}</td> 
+        
+               <td>{{i.schedule_date}}</td>
+               <td>{{i.schedule_time}}</td>
+             
+               <td>{{i.schedule_venue}}</td>
+        
+               <td>{{i.schedule_details}}</td>
+               <td><img src="{{i.schedule_poster.url}}" width="150" height="150"></td>
+               <td><a href="{% url 'weborganisation:paid_show' i.id %}">BookedList</a></td>
+               <td><a href="{% url 'weborganisation:delshow' i.id %}">Delete</a> </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </form>    
+    
+</body></div><br><br><br><br>
+</html>
+
+
+
+
+
+{% endblock content %}
+

@@ -1,0 +1,34 @@
+<table align="center" cellpadding="50" style="border-collapse: collapse">
+    <tr>
+        {% for i in pr %}
+
+        <td>
+            <div style="text-align:center;border:1px solid black;margin:22px;padding:20px">
+
+                <p><img src="{{i.product_photo.url}}" width="150" height="150"></p>
+                <br>
+                <p>{{i.product_name}}</p>
+                <br>
+                
+                <p>{{i.product_price}}</p>
+                <br>
+                
+                {%  if i.stock_qty > 0 %}
+                <p> <a href="{% url 'webuser:cart' i.id %}" class="btn btn-success">Add To Cart</a></p>
+                <br>
+                {% else %}
+                    <p> <a href="#" class="btn btn-danger">OutofStock</a></p>
+                    <br>
+                {% endif %}
+            </div>
+        </td>
+        {% if forloop.counter|divisibleby:4 %}
+    </tr>
+    <tr>
+        {% endif %}
+
+
+        {% endfor %}
+       
+
+</table>

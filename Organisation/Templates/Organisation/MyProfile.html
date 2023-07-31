@@ -1,0 +1,43 @@
+{% extends 'Organisation/Head.html'%}
+
+
+{%load static%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head><div id="tab" align="center"><br><br><br><br>
+
+<body>    <h1><cenetr><b>My Profile</b></cenetr></h1>
+    <table border="1" align="center" cellpadding="10" style="border-collapse:collapse">
+     
+        
+            <td colspan="2" align="center"><img src="{{data.org_photo.url}}" width="150" height="150"  style="border-radius: 75px;"></td>
+        
+        <tr>
+            <td>NAME</td>
+            <td>{{data.org_name}}</td>
+        </tr>
+        <tr>
+            <td>CONTACT</td>
+            <td>{{data.org_contact}}</td>
+        </tr>
+        <tr>
+            <td>EMAIL</td>
+            <td>{{data.org_email}}</td>
+        </tr>
+        <tr>
+            <td>ADDRESS</td>
+            <td>{{data.org_address}}</td>
+        </tr>
+        
+      
+    </table>
+</body></div><br><br><br><br>
+</html>
+
+{% endblock content %}

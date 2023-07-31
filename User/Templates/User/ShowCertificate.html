@@ -1,0 +1,81 @@
+
+<html>
+    <div align="center>"
+    <head>
+       
+        <style type='text/css'>
+            body, html {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                color: rgb(14, 14, 242);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: Georgia, serif;
+                font-size: 24px;
+                text-align: center;
+            }
+            .container {
+                border: 20px solid rgb(13, 248, 80);
+                width: 750px;
+                height: 563px;
+                display: table-cell;
+                vertical-align: middle;
+            }
+            .logo {
+                color: tan;
+            }
+
+            .marquee {
+                color: rgb(241, 8, 8);
+                font-size: 48px;
+                margin: 20px;
+            }
+            .assignment {
+                margin: 20px;
+            }
+            .person {
+                border-bottom: 2px solid rgb(238, 15, 15);
+                font-size: 32px;
+                font-style: italic;
+                margin: 20px auto;
+                width: fit-content;
+            }
+            .reason {
+                margin: 20px;
+            }
+        </style>
+    </head>
+  
+    <a href="{% url 'webuser:Home' %}">My Home</a><br>
+    <body>
+        {% for i in judge %}
+        <div class="container">
+            <div class="logo">
+                
+            </div>
+
+            <div class="marquee">
+                <P>{{i.booking.schedule.schedule_title}}</P>
+            </div>
+
+            <div class="assignment">
+                This certificate is presented to
+            </div>
+
+            <div class="person">
+                <p>{{i.user.dog_name}}</p>
+                <p>For Awarding {{i.result_position}} Prize In {{i.booking.schedule.schedule_title}}-{{i.booking.schedule.schedule_date}}</p>
+               <p> <img src="{{i.user.dog_photo.url}}" width="150" height="150"></p>
+            </div>
+<p>Awarded by {{i.booking.schedule.organisation.org_name}}</p>
+            <div class="reason">
+                THIS CERTIFICATE FORMALLY VERIFIES THAT THE ABOVE DOG MEETS THE CONFORMATION SET FORTH BY THE PARENT CLUB AND HAS BEEN RECORDED AS A CONFORMATION CHAMPION WITHIN THE KENNEL CLUB.<br/>   
+            </div>
+            {% endfor %} 
+        </div>
+    </body>
+</div>
+</html>

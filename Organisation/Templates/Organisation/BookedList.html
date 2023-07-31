@@ -1,0 +1,74 @@
+{% extends 'Organisation/Head.html'%}
+
+
+{%load static%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head><br><br><br><br>
+<div id="tab" align="center"><h1><center>Booked List Of Show</center></h1>
+<body>
+
+
+    <table border="1" align="center" cellpadding="10" style="border-collapse:collapse">
+        <tr>
+           <th>SI NO</th>
+           <th>Event Name</th>
+           <th>Date</th>
+        
+           <th>Event Venue</th>
+           <th>Time</th>
+         
+           <th>Event Poster</th>
+           <th>User Name</th>
+           <th>User Address</th>
+           <th>Dog Licence</th>
+           <th>Dog Name</th>
+           <th>Breed</th>
+           <th>Image</th>
+           <th>Result</th>
+         
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.schedule.schedule_title}}</td> 
+            <td>{{i.booking_date}}</td> 
+            <td>{{i.schedule.schedule_venue}}</td>
+            <td>{{i.schedule.schedule_time}}</td>
+        
+            
+           <td><img src="{{i.schedule.schedule_poster.url}}" width="150" height="150"></td>
+
+       
+           <td>{{i.user.user_name}}</td> 
+           <td>{{i.user.user_address}}</td> 
+           <td>{{i.user.dog_licence}}</td> 
+           <td>{{i.user.dog_name}}</td> 
+           <td>{{i.user.dog_breed}}</td> 
+           <td><img src="{{i.user.dog_photo.url}}" width="150" height="150"></td>
+           {% if i.result_sts > 0 %}
+           <td> <font color="red">Result Already published</font></td>
+           {% else %}
+           <td><a href="{% url 'weborganisation:result' i.id %}"><font color="red">Publish Result</font></a></td>
+          
+           {% endif %}
+           <!-- <td><a href="{% url 'weborganisation:Chat-doctor' i.id %}">Chat Now</a></td> -->
+           <!-- <td><a href="{% url 'webuser:del_pshow' i.id %}">Delete</a> -->
+        </tr>
+        {% endfor %} 
+        
+    
+    </table>
+
+
+   
+</body></div><br><br><br><br>
+</html>
+
+{% endblock content %}

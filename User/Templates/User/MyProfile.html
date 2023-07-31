@@ -1,0 +1,54 @@
+{% extends 'User/Head.html'%}
+
+
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block content %}
+
+</head><div id="tab" align="center">
+<br>
+<br>
+<h1><center>My Profile</center></h1>
+<body> 
+    <table border="1" align="center" cellpadding="10" style="border-collapse:collapse">
+     
+        
+            <td colspan="2" align="center"><img src="{{data.user_photo.url}}" width="150" height="150"  style="border-radius: 75px;"></td>
+        
+        <tr>
+            <td>NAME</td>
+            <td>{{data.user_name}}</td>
+        </tr>
+        <tr>
+            <td>CONTACT</td>
+            <td>{{data.user_contact}}</td>
+        </tr>
+        <tr>
+            <td>EMAIL</td>
+            <td>{{data.user_email}}</td>
+        </tr>
+        <tr>
+            <td>ADDRESS</td>
+            <td>{{data.user_address}}</td>
+        </tr>
+        <tr>
+        <td>
+        <a href="{% url 'webuser:edtpro' %}">Edit Profile</a><br>
+    </td></tr>
+
+    </table>
+    
+</body></div>
+<br>
+<br>
+</html>
+
+
+{% endblock content %}

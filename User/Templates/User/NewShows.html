@@ -1,0 +1,71 @@
+{% extends 'User/Head.html'%}
+{%load static%}
+
+ {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head><br><br>
+   <h1><center>Active Shows</center></h1>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head><div id="tab" align="center">
+
+<body  class="img js-fullheight" style="background-image: url({% static 'Login/images/bg8.jpg' %})">
+   
+        
+    <table border="1" align="center" cellpadding="10" style="border-collapse:collapse">
+    {% for i in Show %}
+    <tr><td>
+    <tr> 
+        <td>Event Name</td>
+        <td>{{i.schedule_title}}</td> 
+    </tr>   
+    <tr> 
+        <td>District</td>  
+        <td>{{i.place.district}}</td> 
+    </tr> 
+    <tr>  
+        <td>Place</td> 
+        <td>{{i.place}}</td> 
+    </tr> 
+    <tr>
+        <td>Event Place</td>
+       <td>{{i.schedule_date}}</td>
+    </tr>
+    <tr>  
+        <td>Event Time</td> 
+       <td>{{i.schedule_time}}</td>
+    </tr>
+    <tr>
+        <td>Event Venue</td>
+       <td>{{i.schedule_venue}}</td>
+    </tr> 
+    <tr> 
+        <td>Event Details</td>
+       <td>{{i.schedule_details}}</td>
+    </tr> 
+    <tr>
+        <td>Event Poster</td>    
+       <td><img src="{{i.schedule_poster.url}}" width="150" height="150"></td>
+    </tr> 
+  <tr>
+    
+       <td colspan="2" align="center">
+        <p><a href="{% url 'webuser:book_show' i.id %}">Book Now</a></p>
+        
+    </td>
+    </tr></td>
+    </tr>
+   
+    {% endfor %}
+</table>
+
+
+
+
+
+</body></div><br><br>
+</html>
+{% endblock content %}

@@ -1,0 +1,79 @@
+{% extends 'Organisation/Head.html'%}
+
+
+{%load static%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head><div id="tab" align="center"><br><br><br><br>
+<body>
+<h1><center>Publish Results</center></h1>
+
+<form action="" method="POST" id="UserForm">
+    {% csrf_token %}
+    <tr>
+   
+        <td><input type="text"  placeholder="enter position here" name="txt_num"></td>
+    </tr><br><br>
+    <tr><td><input type="submit" value="submit"></td>
+        <td><input type="submit" value="cancel"></td></tr>
+   
+        <br><br><br><br><br><br><br>
+
+
+    <table border="1" align="center" cellpadding="10" style="border-collapse:collapse">
+        <tr>
+           <th>SI NO</th>
+           <th>Event Name</th>
+           <th>Date</th>
+        
+           <th>Event Venue</th>
+      
+         
+           <th>Event Poster</th>
+           <th>User Name</th>
+           <th>User Address</th>
+           <th>Dog Licence</th>
+           <th>Dog Name</th>
+           <th>Breed</th>
+           <th>Image</th>
+           <th>Result</th>
+     
+        </tr>
+        {% for i in judge %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+         
+          
+            <td>{{i.booking.schedule.schedule_title}}</td>
+            <td>{{i.booking.booking_date}}</td> 
+            <td>{{i.booking.schedule.schedule_venue}}</td>
+        
+            
+           <td><img src="{{i.booking.schedule.schedule_poster.url}}" width="150" height="150"></td>
+
+       
+           <td>{{i.user.user_name}}</td> 
+           <td>{{i.user.user_address}}</td> 
+           <td>{{i.user.dog_licence}}</td> 
+           <td>{{i.user.dog_name}}</td> 
+           <td>{{i.user.dog_breed}}</td> 
+           <td><img src="{{i.user.dog_photo.url}}" width="150" height="150"></td>
+           <td>{{i.result_position}}</td>
+   
+        </tr>
+        {% endfor %} 
+    </table>
+
+
+   
+</body></div><br><br><br><br>
+</html>
+
+
+{% endblock content %}

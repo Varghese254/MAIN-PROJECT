@@ -1,0 +1,59 @@
+{% extends 'Admin/Head.html'%}
+
+
+{%load static%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head><div id="tab" align="center">
+<body><h1><center><b>Complaint List</b></center></h1>
+    <form action="" method="post">
+        <table border="1" align="center" cellpadding="10" style="border-collapse:collapse">
+            <tr>
+               <th>SI NO</th>
+               <th>COMPLAINT TITLE</th>
+               <th>COMPLAINT DETAILS</th>
+               <th>COMPLAINT DATE</th>
+               <th>USER NAME</th>
+               <th>USER EMAIL</th>
+               <th>USER ADDRESS</th>
+               <th>ORGANISATION NAME</th>
+              
+               
+              
+              
+               <th>ACTION</th> 
+            </tr>
+            {% for i in data %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{i.complaint_details}}</td>
+                <td>{{i.complaint_title}}</td>
+                <td>{{i.complaint_date}}</td>
+                <td>{{i.user_id.user_name}}</td>
+                <td>{{i.user_id.user_email}}</td>
+                <td>{{i.user_id.user_address}}</td>
+                <td>{{i.organisation_name.org_name}}</td>
+              
+    
+               
+                <td>
+                    {% if i.complaint_status == 0 %}
+                    <p><a href="{% url 'webadmin:complaintreply' i.id %}">REPLY</a></p>
+                    {% else %}
+                    <p>Replied</p>
+                    {% endif %}
+                    
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+</body></div>
+</html>
+{% endblock content %}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><b><h1>DOCTOR REGISTRATION</h1></b></center>
+    <form id="" method="post" data-place-url="{% url 'webadmin:Ajax-Place' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div align="center">
+    <table>
+    <tr>
+        <td>NAME</td>
+        <td><input type="text" name="name"></td>
+    </tr>
+    <tr>
+        <td>EMAIL</td>
+        <td><input type="email" name="email"></td>
+    </tr>
+    <tr>
+        <td>PASSWORD</td>
+        <td><input type="password" name="password"></td>
+    </tr>
+    <tr>
+        <td>RETYPE-PASSWORD</td>
+        <td><input type="password" name="password2"></td>
+    </tr>
+    <tr>
+        <td>CONTACT</td>
+        <td><input type="contact" name="contact"></td>
+    </tr>
+    <tr><td>District</td>
+        <td><select name="District" id="dist">
+            <option value="">--SELECT--</option>
+            {% for i in dis %}
+            <option value="{{i.id}}">{{i}}</option>
+            {% endfor %}
+          
+         
+         
+        </select></td></tr>
+    <tr>
+        <tr><td>PLACE</td>
+            <td><select name="place" id="pl">
+              <option value="">---Select---</option>
+               
+            </select></td></tr>
+            <tr>
+                <td>PHOTO3</td>
+                <td><input type="file" name="photo"></td>
+            </tr>
+    <tr>
+        <td>ADDRESS</td>
+        <td><textarea name="address"></textarea></td>
+    </tr>
+
+</table>
+</div>
+</form>
+</body>
+</html>

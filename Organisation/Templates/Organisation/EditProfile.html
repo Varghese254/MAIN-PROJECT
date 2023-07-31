@@ -1,0 +1,40 @@
+{% extends 'Organisation/Head.html'%}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+</head><div id="tab" align="center">
+    <h1><cenetr>Edit Profile</cenetr></h1>
+<body>
+    <br><br><br>
+    <form action="" method="post" id="UserForm">
+        {% csrf_token %}
+    <table border="1" align="center" cellpadding="10" style="border-collapse: collapse;">
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="txt_name" value="{{data.org_name}}"></td>
+        </tr>
+        <tr>
+            <td>Contact:</td>
+            <td><input type="text" name="txt_contact" value="{{data.org_contact}}"></td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td><textarea id="txt_address" name="txt_address" rows="4" cols="50" required="" autocomplete="off">{{data.org_address}}</textarea></td>
+        </tr>
+        <tr>
+            <td align="center" colspan="2"><input type="submit" value="Change">&nbsp&nbsp<input type="reset" value="Cancel"></td>
+        </tr>
+        </table>
+    </form>
+</body></div>
+</html>
+<br><br>
+{% endblock content %}
